@@ -1,0 +1,11 @@
+C:\Users\domak\Desktop\4. Szem\c#\C#formGame\Shimakee\ShimaKeeCSharp\ShimaKeeCSharp\bin\Debug\ShimaKeeCSharp.exe.config
+C:\Users\domak\Desktop\4. Szem\c#\C#formGame\Shimakee\ShimaKeeCSharp\ShimaKeeCSharp\bin\Debug\ShimaKeeCSharp.exe
+C:\Users\domak\Desktop\4. Szem\c#\C#formGame\Shimakee\ShimaKeeCSharp\ShimaKeeCSharp\bin\Debug\ShimaKeeCSharp.pdb
+C:\Users\domak\Desktop\4. Szem\c#\C#formGame\Shimakee\ShimaKeeCSharp\ShimaKeeCSharp\obj\Debug\ShimaKeeCSharp.csproj.AssemblyReference.cache
+C:\Users\domak\Desktop\4. Szem\c#\C#formGame\Shimakee\ShimaKeeCSharp\ShimaKeeCSharp\obj\Debug\ShimaKeeCSharp.csproj.SuggestedBindingRedirects.cache
+C:\Users\domak\Desktop\4. Szem\c#\C#formGame\Shimakee\ShimaKeeCSharp\ShimaKeeCSharp\obj\Debug\ShimaKeeCSharp.Properties.Resources.resources
+C:\Users\domak\Desktop\4. Szem\c#\C#formGame\Shimakee\ShimaKeeCSharp\ShimaKeeCSharp\obj\Debug\ShimaKeeCSharp.csproj.GenerateResource.cache
+C:\Users\domak\Desktop\4. Szem\c#\C#formGame\Shimakee\ShimaKeeCSharp\ShimaKeeCSharp\obj\Debug\ShimaKeeCSharp.csproj.CoreCompileInputs.cache
+C:\Users\domak\Desktop\4. Szem\c#\C#formGame\Shimakee\ShimaKeeCSharp\ShimaKeeCSharp\obj\Debug\ShimaKeeCSharp.exe
+C:\Users\domak\Desktop\4. Szem\c#\C#formGame\Shimakee\ShimaKeeCSharp\ShimaKeeCSharp\obj\Debug\ShimaKeeCSharp.pdb
+C:\Users\domak\Desktop\4. Szem\c#\C#formGame\Shimakee\ShimaKeeCSharp\ShimaKeeCSharp\obj\Debug\ShimaKeeCSharp.Form1.resources
