@@ -4,7 +4,7 @@ namespace ShimaKeeCSharp.entity;
 
 public class PlayerFunctions
 {
-    public Player LvlUp(Player player, ArrayList enemies)
+    public Player LvlUp(Player player)
     {
         Player change = player;
         while (change.Experience >= change.LvlCap)
@@ -16,12 +16,6 @@ public class PlayerFunctions
             change.Health = change.DefaultHp + (change.Lvl * 250);
             change.Attack = change.DefaultAtk + (change.Lvl * 25);
             change.Defense = change.DefaultDef + (change.Lvl * 10);
-        }
-
-        EnemyFunctions instance = new EnemyFunctions();
-        foreach (Enemy enemy in enemies)
-        { 
-            instance.UpdateEnemy(enemy, player);
         }
 
         return player;
