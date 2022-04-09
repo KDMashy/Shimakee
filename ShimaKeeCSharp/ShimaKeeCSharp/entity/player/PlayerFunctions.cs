@@ -1,9 +1,32 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
+using System.IO;
 
 namespace ShimaKeeCSharp.entity;
 
 public class PlayerFunctions
 {
+    public void SavePlayer(Player player)
+    {
+        string fileName = player.Name + "_player.txt";
+        if (!File.Exists(fileName))
+        {
+            using (var fileStream = new FileStream(fileName, FileMode.OpenOrCreate))
+            using (var writer = new StreamWriter(fileStream))
+            {
+                writer.Write($"{player.Name};{player.DefaultHp};{player.DefaultAtk};");
+                writer.Write($"{player.DefaultDef};{player.DefaultExp};{player.Money}");
+            }
+        }
+    }
+
+    public List<Player> ReadPlayers()
+    {
+        List<Player> players = new List<Player>();
+        string strRegex = @"";
+        return players;
+    }
+    
     public Player LvlUp(Player player)
     {
         Player change = player;

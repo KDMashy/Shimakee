@@ -16,13 +16,16 @@ public class NPCFunctions
             "Chi", "Shiro",
             "Kuro", "Hiro"
         };
-        using (var fileStream = new FileStream(fileName, FileMode.OpenOrCreate))
-        using (var writer = new StreamWriter(fileStream))
+        if (!File.Exists(fileName))
         {
-            writer.Write($"{npcNames[0]};{npc.Completed};{npc.Accepted};{player.Name}");
-            for (int i = 1; i < npcNames.Length; i++)
+            using (var fileStream = new FileStream(fileName, FileMode.OpenOrCreate))
+            using (var writer = new StreamWriter(fileStream))
             {
-                writer.Write($":{npcNames[i]};{npc.Completed};{npc.Accepted};{player.Name}");
+                writer.Write($"{npcNames[0]};{npc.Completed};{npc.Accepted};{player.Name}");
+                for (int i = 1; i < npcNames.Length; i++)
+                {
+                    writer.Write($":{npcNames[i]};{npc.Completed};{npc.Accepted};{player.Name}");
+                }
             }
         }
     }
@@ -31,33 +34,45 @@ public class NPCFunctions
     {
         List<NPC> NPCList = new List<NPC>();
         string fileName = player.Name + "_NPC.txt";
-        using (StreamReader reader = new StreamReader(fileName))
+        if (File.Exists(fileName))
         {
-            string line = reader.ReadLine();
-            string[] npcs = line.Split(':');
-            foreach (string read in npcs)
+            using (StreamReader reader = new StreamReader(fileName))
             {
-                string[] npcData = read.Split(';');
-                
-                bool completed = false;
-                bool accepted = false;
-                
-                if (npcData[1].Contains("True")) completed = true;
-                else completed = false;
-                
-                if (npcData[2].Contains("True")) accepted = true;
-                else accepted = false;
-                
-                NPC newNPC = new NPC(
-                    npcData[0],
-                    completed,
-                    accepted,
-                    npcData[3]);
-                
-                NPCList.Add(newNPC);
+                string line = reader.ReadLine();
+                string[] npcs = line.Split(':');
+                foreach (string read in npcs)
+                {
+                    string[] npcData = read.Split(';');
+                    
+                    bool completed = false;
+                    bool accepted = false;
+                    
+                    if (npcData[1].Contains("True")) completed = true;
+                    else completed = false;
+                    
+                    if (npcData[2].Contains("True")) accepted = true;
+                    else accepted = false;
+                    
+                    NPC newNPC = new NPC(
+                        npcData[0],
+                        completed,
+                        accepted,
+                        npcData[3]);
+                    
+                    NPCList.Add(newNPC);
+                }
             }
         }
         
         return NPCList;
+    }
+
+    public void DeleteNPCList(Player player)
+    {
+        string fileName = player.Name + "_NPC.txt";
+        if(File.Exists(fileName))
+        {
+            File.Delete(fileName);
+        }
     }
 }

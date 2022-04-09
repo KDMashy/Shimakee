@@ -1,1 +1,1 @@
-Mashiron;True;False;tesztP:Shiina;False;False;tesztP:Raku;False;False;tesztP:Kaede;False;False;tesztP:Chi;False;False;tesztP:Shiro;False;False;tesztP:Kuro;False;False;tesztP:Hiro;False;False;tesztP
+Mashiron;False;False;tesztP:Shiina;False;False;tesztP:Raku;False;False;tesztP:Kaede;False;False;tesztP:Chi;False;False;tesztP:Shiro;False;False;tesztP:Kuro;False;False;tesztP:Hiro;False;False;tesztP
