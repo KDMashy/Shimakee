@@ -18,14 +18,14 @@ namespace ShimaKeeCSharp.entity
         /// </summary>
         
         private float quest;
-        private float defaultHp;
-        private float defaultAtk;
+        private Random rnd = new Random();
         
         public Enemy(string name, float health, float attack, float defense, List<float> other) : 
             base(name, health, attack, defense)
         {
             defaultHp = Health;
             defaultAtk = Attack;
+            defaultDef = Defense;
 
             quest = other[0];
             experience = other[1];

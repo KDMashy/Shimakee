@@ -50,7 +50,9 @@
         <Compile Include="entity\core\Entity.cs" />
         <Compile Include="entity\enemy\Drop.cs" />
         <Compile Include="entity\enemy\Enemy.cs" />
+        <Compile Include="entity\enemy\EnemyFunctions.cs" />
         <Compile Include="entity\player\Player.cs" />
+        <Compile Include="entity\player\PlayerFunctions.cs" />
         <Compile Include="Form1.cs">
             <SubType>Form</SubType>
         </Compile>

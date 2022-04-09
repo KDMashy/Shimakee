@@ -6,7 +6,11 @@
         protected float health;
         protected float attack;
         protected float defense;
-        protected float lvl;
+        protected float lvl = 1;
+        
+        protected float defaultHp;
+        protected float defaultAtk;
+        protected float defaultDef;
 
         public Entity(string name, float health, float attack, float defense)
         {
@@ -44,6 +48,24 @@
         {
             get => lvl;
             set => lvl = value;
+        }
+
+        public float DefaultHp
+        {
+            get => defaultHp;
+            set => defaultHp = value;
+        }
+
+        public float DefaultAtk
+        {
+            get => defaultAtk;
+            set => defaultAtk = value;
+        }
+
+        public float DefaultDef
+        {
+            get => defaultDef;
+            set => defaultDef = value;
         }
     }
 }
