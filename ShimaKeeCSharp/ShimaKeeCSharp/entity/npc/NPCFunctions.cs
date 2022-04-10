@@ -6,9 +6,22 @@ namespace ShimaKeeCSharp.entity.npc;
 
 public class NPCFunctions
 {
-    public void SaveNPC(Player player, NPC npc)
+    public void CreateNPC(Player player)
     {
-        string fileName = player.Name + "_NPC.txt";
+        SaveFunc(false, false, player.Name);
+    }
+
+    public void SaveNPC(Player player, List<NPC> npcs)
+    {
+        foreach (NPC npc in npcs)
+        {
+            SaveFunc(npc.Completed, npc.Accepted, player.Name);
+        }
+    }
+
+    private void SaveFunc(bool completed, bool accepted, string player)
+    {
+        string fileName = player + "_NPC.txt";
         string[] npcNames = new string[]
         {
             "Mashiron", "Shiina",
@@ -16,16 +29,13 @@ public class NPCFunctions
             "Chi", "Shiro",
             "Kuro", "Hiro"
         };
-        if (!File.Exists(fileName))
+        using (var fileStream = new FileStream(fileName, FileMode.OpenOrCreate))
+        using (var writer = new StreamWriter(fileStream))
         {
-            using (var fileStream = new FileStream(fileName, FileMode.OpenOrCreate))
-            using (var writer = new StreamWriter(fileStream))
+            writer.Write($"{npcNames[0]};{completed};{accepted};{player}");
+            for (int i = 1; i < 8; i++)
             {
-                writer.Write($"{npcNames[0]};{npc.Completed};{npc.Accepted};{player.Name}");
-                for (int i = 1; i < npcNames.Length; i++)
-                {
-                    writer.Write($":{npcNames[i]};{npc.Completed};{npc.Accepted};{player.Name}");
-                }
+                writer.Write($":{npcNames[i]};{completed};{accepted};{player}");
             }
         }
     }
@@ -67,12 +77,12 @@ public class NPCFunctions
         return NPCList;
     }
 
-    public void DeleteNPCList(Player player)
+    /*public void DeleteNPCList(Player player)
     {
         string fileName = player.Name + "_NPC.txt";
         if(File.Exists(fileName))
         {
             File.Delete(fileName);
         }
-    }
+    }*/
 }

@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using ShimaKeeCSharp.entity.npc;
 
 namespace ShimaKeeCSharp.entity;
 
 public class PlayerFunctions
 {
-    public void SavePlayer(Player player)
+    public void CreatePlayer(Player player)
     {
         string fileName = player.Name + "_player.txt";
         if (!File.Exists(fileName))
@@ -17,14 +18,50 @@ public class PlayerFunctions
                 writer.Write($"{player.Name};{player.DefaultHp};{player.DefaultAtk};");
                 writer.Write($"{player.DefaultDef};{player.DefaultExp};{player.Money}");
             }
+
+            NPCFunctions NPCF = new NPCFunctions();
+            NPCF.CreateNPC(player);
         }
     }
 
-    public List<Player> ReadPlayers()
+    public List<Player> LoadPlayers()
     {
         List<Player> players = new List<Player>();
-        string strRegex = @"";
+        EntityFunctions entityFunc = new EntityFunctions();
+        List<string> playerFile = entityFunc.GetFiles("_player.txt");
+        foreach (string file in playerFile)
+        {
+            if (File.Exists(file))
+            {
+                using (StreamReader reader = new StreamReader(file))
+                {
+                    string line = reader.ReadLine();
+                    string[] playerData = line.Split(';');
+                    Player player = new Player(
+                        playerData[0],
+                        float.Parse(playerData[1]),
+                        float.Parse(playerData[2]),
+                        float.Parse(playerData[3]),
+                        float.Parse(playerData[4]),
+                        float.Parse(playerData[5])
+                    );
+                    players.Add(player);
+                }
+            }
+        }
+
         return players;
+    }
+
+    public void DeletePlayer(Player player)
+    {
+        string fileNamePlayer = player.Name + "_player.txt";
+        string fileNameNPC = player.Name + "_NPC.txt";
+        if(File.Exists(fileNamePlayer) && File.Exists(fileNameNPC))
+        {
+            File.Delete(fileNamePlayer);
+            File.Delete(fileNameNPC);
+        }
     }
     
     public Player LvlUp(Player player)

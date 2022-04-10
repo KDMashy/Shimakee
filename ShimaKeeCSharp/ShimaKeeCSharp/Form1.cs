@@ -20,23 +20,22 @@ namespace ShimaKeeCSharp
         {
             InitializeComponent();
             Player player = new Player("tesztP", 300, 25, 15, 1600, 0);
-            NPC npc = new NPC("", false, false, player.Name);
             NPCFunctions npcf = new NPCFunctions();
             PlayerFunctions playerf = new PlayerFunctions();
-            //playerf.SavePlayer(player);
-            //npcf.SaveNPC(player, npc);
+            //playerf.CreatePlayer(player);
             /*List<NPC> lista = npcf.ReadNPC(player);
             foreach (NPC npcp in lista)
             {
-                testBox.Text += npcp.Name + npcp.Completed + "\n";
+                testBox.Text += npcp.Name + "\n";
             }*/
             //npcf.DeleteNPCList(player);
 
-            List<string> neededFiles = new EntityFunctions().GetFiles("_player.txt");
-            foreach (string needed in neededFiles)
+            /*List<Player> newPlayers = playerf.LoadPlayers();
+            foreach (Player random in newPlayers)
             {
-                testBox.Text += needed + "\n";
-            }
+                testBox.Text += random.Name + "\n";
+                playerf.DeletePlayer(random);
+            }*/
         }
     }
 }
