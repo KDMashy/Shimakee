@@ -22,6 +22,7 @@ namespace ShimaKeeCSharp
             Player player = new Player("tesztP", 300, 25, 15, 1600, 0);
             NPCFunctions npcf = new NPCFunctions();
             PlayerFunctions playerf = new PlayerFunctions();
+            EnemyFunctions enemyf = new EnemyFunctions();
             //playerf.CreatePlayer(player);
             /*List<NPC> lista = npcf.ReadNPC(player);
             foreach (NPC npcp in lista)
@@ -29,12 +30,16 @@ namespace ShimaKeeCSharp
                 testBox.Text += npcp.Name + "\n";
             }*/
             //npcf.DeleteNPCList(player);
-
             /*List<Player> newPlayers = playerf.LoadPlayers();
             foreach (Player random in newPlayers)
             {
                 testBox.Text += random.Name + "\n";
                 playerf.DeletePlayer(random);
+            }*/
+            /*List<Enemy> enemies = enemyf.LoadEnemy();
+            foreach (Enemy enemy in enemies)
+            {
+                testBox.Text += enemy.Name + "\n";
             }*/
         }
     }
