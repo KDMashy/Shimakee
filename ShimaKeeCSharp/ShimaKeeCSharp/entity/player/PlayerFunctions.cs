@@ -12,15 +12,32 @@ public class PlayerFunctions
         string fileName = player.Name + "_player.txt";
         if (!File.Exists(fileName))
         {
-            using (var fileStream = new FileStream(fileName, FileMode.OpenOrCreate))
-            using (var writer = new StreamWriter(fileStream))
-            {
-                writer.Write($"{player.Name};{player.DefaultHp};{player.DefaultAtk};");
-                writer.Write($"{player.DefaultDef};{player.DefaultExp};{player.Money}");
-            }
+            SavePlayerFunc(player, fileName);
 
             NPCFunctions NPCF = new NPCFunctions();
             NPCF.CreateNPC(player);
+        }
+    }
+
+    public void SavePlayer(Player player, List<NPC> npcs)
+    {
+        string fileName = player.Name + "_player.txt";
+        if (File.Exists(fileName))
+        {
+            SavePlayerFunc(player, fileName);
+
+            NPCFunctions NPCF = new NPCFunctions();
+            NPCF.SaveNPC(player, npcs);
+        }
+    }
+
+    private void SavePlayerFunc(Player player, string fileName)
+    {
+        using (var fileStream = new FileStream(fileName, FileMode.OpenOrCreate))
+        using (var writer = new StreamWriter(fileStream))
+        {
+            writer.Write($"{player.Name};{player.DefaultHp};{player.DefaultAtk};");
+            writer.Write($"{player.DefaultDef};{player.DefaultExp};{player.Money}");
         }
     }
 
