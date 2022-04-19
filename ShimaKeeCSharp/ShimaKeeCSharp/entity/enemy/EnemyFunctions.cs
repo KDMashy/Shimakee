@@ -23,7 +23,8 @@ public class EnemyFunctions
                         enemyData[0],
                         float.Parse(enemyData[1]),
                         float.Parse(enemyData[2]),
-                        float.Parse(enemyData[3])
+                        float.Parse(enemyData[3]),
+                        enemyData[8]
                     );
                     enemy.Quest = float.Parse(enemyData[4]);
                     enemy.experience = float.Parse(enemyData[5]);

@@ -17,7 +17,7 @@ public class NPCFunctions
         };
         foreach (string npcName in npcNames)
         {
-            SaveFunc(npcName, false, false, player.Name);
+            SaveFunc(npcName, false, false, player.Name, 0, 0);
         }
     }
 
@@ -26,17 +26,17 @@ public class NPCFunctions
         DeleteNPCList(player);
         foreach (NPC npc in npcs)
         {
-            SaveFunc(npc.Name, npc.Completed, npc.Accepted, player.Name);
+            SaveFunc(npc.Name, npc.Completed, npc.Accepted, player.Name, npc.XpGive, npc.MoneyGive);
         }
     }
 
-    private void SaveFunc(string npcName, bool completed, bool accepted, string player)
+    private void SaveFunc(string npcName, bool completed, bool accepted, string player, float xp, float money)
     {
         string fileName = player + "_NPC.txt";
         using (var fileStream = new FileStream(fileName, FileMode.Append))
         using (var writer = new StreamWriter(fileStream))
         {
-            writer.Write($"{npcName};{completed};{accepted};{player}:");
+            writer.Write($"{npcName};{completed};{accepted};{player};{xp};{money}:");
         }
     }
 
@@ -69,7 +69,9 @@ public class NPCFunctions
                             npcData[0],
                             completed,
                             accepted,
-                            npcData[3]);
+                            npcData[3],
+                            float.Parse(npcData[4]),
+                            float.Parse(npcData[5]));
                     
                         NPCList.Add(newNPC);
                     }
@@ -87,5 +89,12 @@ public class NPCFunctions
         {
             File.Delete(fileName);
         }
+    }
+
+    public Player npcQuestComplete(Player player, NPC npc)
+    {
+        player.Experience += npc.XpGive;
+        player.Money += npc.MoneyGive;
+        return player;
     }
 }

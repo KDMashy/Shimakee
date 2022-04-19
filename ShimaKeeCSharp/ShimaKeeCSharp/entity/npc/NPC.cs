@@ -6,13 +6,17 @@ public class NPC
     private bool completed;
     private bool accepted;
     private string playerName;
+    private float xpGive;
+    private float moneyGive;
 
-    public NPC(string name, bool completed, bool accepted, string playerName)
+    public NPC(string name, bool completed, bool accepted, string playerName, float xp, float money)
     {
         this.name = name;
         this.completed = completed;
         this.accepted = accepted;
         this.playerName = playerName;
+        this.xpGive = xp;
+        this.moneyGive = money;
     }
 
     public string Name
@@ -37,5 +41,17 @@ public class NPC
     {
         get => playerName;
         set => playerName = value;
+    }
+
+    public float XpGive
+    {
+        get => xpGive;
+        set => xpGive = value;
+    }
+
+    public float MoneyGive
+    {
+        get => moneyGive;
+        set => moneyGive = value;
     }
 }

@@ -42,5 +42,10 @@ namespace ShimaKeeCSharp
                 testBox.Text += enemy.Name + "\n";
             }*/
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

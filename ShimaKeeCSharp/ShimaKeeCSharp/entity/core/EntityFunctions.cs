@@ -20,4 +20,19 @@ public class EntityFunctions
 
         return neededFiles;
     }
+
+    public List<Enemy> quest(Player player, float questId)
+    {
+        List<Enemy> questEnemy = new List<Enemy>();
+        List<Enemy> enemies = new EnemyFunctions().LoadEnemy();
+        foreach (Enemy enemy in enemies)
+        {
+            if (enemy.Quest == questId)
+            {
+                questEnemy.Add(new EnemyFunctions().UpdateEnemy(enemy, player));   
+            }
+        }
+
+        return questEnemy;
+    }
 }

@@ -1,15 +1,15 @@
-Wolf;100;6;14;1;50;25;1
-Bear;200;7;24;1;75;50;1
-Wyvern;300;9;34;1;100;75;1
-Goblin;150;6;20;2;50;15;1
-Harpy;200;9;30;2;75;35;1
-Troll;300;12;50;2;100;50;1
-Mountain Troll;300;14;50;3;100;100;1
-High Mountain Troll;350;16;50;3;150;125;1
-Goblin King;450;25;70;3;200;200;1
-Watcher;350;16;40;4;100;50;1
-Behemoth;450;20;70;4;200;150;1
-Thunderjaw;600;24;100;4;300;300;1
-Werewolf;500;30;100;5;250;150;1
-Vampire;700;34;100;5;350;250;1
-KALKULUS;800;50;150;5;500;500;1
+Wolf;100;6;14;1;50;25;1;imgurl
+Bear;200;7;24;1;75;50;1;imgurl
+Wyvern;300;9;34;1;100;75;1;imgurl
+Goblin;150;6;20;2;50;15;1;imgurl
+Harpy;200;9;30;2;75;35;1;imgurl
+Troll;300;12;50;2;100;50;1;imgurl
+Mountain Troll;300;14;50;3;100;100;1;imgurl
+High Mountain Troll;350;16;50;3;150;125;1;imgurl
+Goblin King;450;25;70;3;200;200;1;imgurl
+Watcher;350;16;40;4;100;50;1;imgurl
+Behemoth;450;20;70;4;200;150;1;imgurl
+Thunderjaw;600;24;100;4;300;300;1;imgurl
+Werewolf;500;30;100;5;250;150;1;imgurl
+Vampire;700;34;100;5;350;250;1;imgurl
+KALKULUS;800;50;150;5;500;500;1;imgurl
