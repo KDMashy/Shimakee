@@ -1,0 +1,1 @@
+Mashiron;True;False;testplayer;300;500:Shiina;True;False;testplayer;450;1000:Raku;True;False;testplayer;600;1500:Kaede;True;False;testplayer;750;2000:Chi;True;False;testplayer;900;4000:Shiro;True;False;testplayer;1050;8000:Kuro;False;True;testplayer;1200;16000:Hiro;False;False;testplayer;1500;32000:

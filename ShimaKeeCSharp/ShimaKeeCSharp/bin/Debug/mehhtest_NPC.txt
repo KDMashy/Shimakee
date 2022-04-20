@@ -1,0 +1,1 @@
+Mashiron;True;False;mehhtest;300;500:Shiina;True;False;mehhtest;450;1000:Raku;False;False;mehhtest;600;1500:Kaede;False;False;mehhtest;750;2000:Chi;False;False;mehhtest;900;4000:Shiro;False;False;mehhtest;1050;8000:Kuro;False;False;mehhtest;1200;16000:Hiro;False;False;mehhtest;1500;32000:

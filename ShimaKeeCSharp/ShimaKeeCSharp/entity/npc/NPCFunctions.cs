@@ -15,9 +15,25 @@ public class NPCFunctions
             "Chi", "Shiro",
             "Kuro", "Hiro"
         };
+        float[] npcXp = new float[]
+        {
+            300, 450,
+            600, 750,
+            900, 1050,
+            1200, 1500
+        };
+        float[] npcMoney = new float[]
+        {
+            500, 1000,
+            1500, 2000,
+            4000, 8000,
+            16000, 32000
+        };
+        int pivot = 0;
         foreach (string npcName in npcNames)
         {
-            SaveFunc(npcName, false, false, player.Name, 0, 0);
+            SaveFunc(npcName, false, false, player.Name, npcXp[pivot], npcMoney[pivot]);
+            pivot++;
         }
     }
 

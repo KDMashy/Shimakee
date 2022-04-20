@@ -60,7 +60,7 @@
             this.QuestTwoB = new System.Windows.Forms.Button();
             this.QuestOneB = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
+            this.NPCPANELFORQUEST = new System.Windows.Forms.Panel();
             this.HiroQuest = new System.Windows.Forms.Button();
             this.KuroQuest = new System.Windows.Forms.Button();
             this.ShiroQuest = new System.Windows.Forms.Button();
@@ -103,7 +103,7 @@
             this.QUESTLOGGINGPANEL.SuspendLayout();
             this.panel1.SuspendLayout();
             this.QUESTPANEL.SuspendLayout();
-            this.panel7.SuspendLayout();
+            this.NPCPANELFORQUEST.SuspendLayout();
             this.PROFILEPANEL.SuspendLayout();
             this.GameMenuOptions.SuspendLayout();
             this.LoadCharactersPanel.SuspendLayout();
@@ -268,7 +268,7 @@
             this.GAMEPANEL.Controls.Add(this.QUESTLOGGINGPANEL);
             this.GAMEPANEL.Controls.Add(this.panel1);
             this.GAMEPANEL.Controls.Add(this.QUESTPANEL);
-            this.GAMEPANEL.Controls.Add(this.panel7);
+            this.GAMEPANEL.Controls.Add(this.NPCPANELFORQUEST);
             this.GAMEPANEL.Controls.Add(this.PROFILEPANEL);
             this.GAMEPANEL.Location = new System.Drawing.Point(375, 12);
             this.GAMEPANEL.Name = "GAMEPANEL";
@@ -307,6 +307,7 @@
             this.LEAVEQUESTB.TabIndex = 2;
             this.LEAVEQUESTB.Text = "LEAVE";
             this.LEAVEQUESTB.UseVisualStyleBackColor = true;
+            this.LEAVEQUESTB.Click += new System.EventHandler(this.LEAVEQUESTB_Click);
             // 
             // QandFLoggingBox
             // 
@@ -427,22 +428,22 @@
             this.label3.Text = "QUESTS";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel7
+            // NPCPANELFORQUEST
             // 
-            this.panel7.BackColor = System.Drawing.Color.Silver;
-            this.panel7.Controls.Add(this.HiroQuest);
-            this.panel7.Controls.Add(this.KuroQuest);
-            this.panel7.Controls.Add(this.ShiroQuest);
-            this.panel7.Controls.Add(this.ChiQuest);
-            this.panel7.Controls.Add(this.KaedeQuest);
-            this.panel7.Controls.Add(this.RakuQuest);
-            this.panel7.Controls.Add(this.ShiinaQuest);
-            this.panel7.Controls.Add(this.MashironQuest);
-            this.panel7.Controls.Add(this.label10);
-            this.panel7.Location = new System.Drawing.Point(653, 341);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(317, 409);
-            this.panel7.TabIndex = 1;
+            this.NPCPANELFORQUEST.BackColor = System.Drawing.Color.Silver;
+            this.NPCPANELFORQUEST.Controls.Add(this.HiroQuest);
+            this.NPCPANELFORQUEST.Controls.Add(this.KuroQuest);
+            this.NPCPANELFORQUEST.Controls.Add(this.ShiroQuest);
+            this.NPCPANELFORQUEST.Controls.Add(this.ChiQuest);
+            this.NPCPANELFORQUEST.Controls.Add(this.KaedeQuest);
+            this.NPCPANELFORQUEST.Controls.Add(this.RakuQuest);
+            this.NPCPANELFORQUEST.Controls.Add(this.ShiinaQuest);
+            this.NPCPANELFORQUEST.Controls.Add(this.MashironQuest);
+            this.NPCPANELFORQUEST.Controls.Add(this.label10);
+            this.NPCPANELFORQUEST.Location = new System.Drawing.Point(653, 341);
+            this.NPCPANELFORQUEST.Name = "NPCPANELFORQUEST";
+            this.NPCPANELFORQUEST.Size = new System.Drawing.Size(317, 409);
+            this.NPCPANELFORQUEST.TabIndex = 1;
             // 
             // HiroQuest
             // 
@@ -450,7 +451,7 @@
             this.HiroQuest.Name = "HiroQuest";
             this.HiroQuest.Size = new System.Drawing.Size(319, 39);
             this.HiroQuest.TabIndex = 8;
-            this.HiroQuest.Text = "Hiro";
+            this.HiroQuest.Text = "Hiro: Complete the 5. quest again";
             this.HiroQuest.UseVisualStyleBackColor = true;
             this.HiroQuest.Click += new System.EventHandler(this.HiroQuest_Click);
             // 
@@ -460,7 +461,7 @@
             this.KuroQuest.Name = "KuroQuest";
             this.KuroQuest.Size = new System.Drawing.Size(319, 39);
             this.KuroQuest.TabIndex = 7;
-            this.KuroQuest.Text = "Kuro";
+            this.KuroQuest.Text = "Kuro: Complete the 4. quest again";
             this.KuroQuest.UseVisualStyleBackColor = true;
             this.KuroQuest.Click += new System.EventHandler(this.KuroQuest_Click);
             // 
@@ -470,7 +471,7 @@
             this.ShiroQuest.Name = "ShiroQuest";
             this.ShiroQuest.Size = new System.Drawing.Size(319, 39);
             this.ShiroQuest.TabIndex = 6;
-            this.ShiroQuest.Text = "Shiro";
+            this.ShiroQuest.Text = "Shiro: Complete the 3. quest again";
             this.ShiroQuest.UseVisualStyleBackColor = true;
             this.ShiroQuest.Click += new System.EventHandler(this.ShiroQuest_Click);
             // 
@@ -480,7 +481,7 @@
             this.ChiQuest.Name = "ChiQuest";
             this.ChiQuest.Size = new System.Drawing.Size(319, 39);
             this.ChiQuest.TabIndex = 5;
-            this.ChiQuest.Text = "Chi";
+            this.ChiQuest.Text = "Chi: Complete the 3. quest again";
             this.ChiQuest.UseVisualStyleBackColor = true;
             this.ChiQuest.Click += new System.EventHandler(this.ChiQuest_Click);
             // 
@@ -490,7 +491,7 @@
             this.KaedeQuest.Name = "KaedeQuest";
             this.KaedeQuest.Size = new System.Drawing.Size(319, 39);
             this.KaedeQuest.TabIndex = 4;
-            this.KaedeQuest.Text = "Kaede";
+            this.KaedeQuest.Text = "Kaede: Complete the 2. quest again";
             this.KaedeQuest.UseVisualStyleBackColor = true;
             this.KaedeQuest.Click += new System.EventHandler(this.KaedeQuest_Click);
             // 
@@ -500,7 +501,7 @@
             this.RakuQuest.Name = "RakuQuest";
             this.RakuQuest.Size = new System.Drawing.Size(319, 39);
             this.RakuQuest.TabIndex = 3;
-            this.RakuQuest.Text = "Raku";
+            this.RakuQuest.Text = "Raku: Complete the 2. quest again";
             this.RakuQuest.UseVisualStyleBackColor = true;
             this.RakuQuest.Click += new System.EventHandler(this.RakuQuest_Click);
             // 
@@ -510,7 +511,7 @@
             this.ShiinaQuest.Name = "ShiinaQuest";
             this.ShiinaQuest.Size = new System.Drawing.Size(319, 39);
             this.ShiinaQuest.TabIndex = 2;
-            this.ShiinaQuest.Text = "Shiina";
+            this.ShiinaQuest.Text = "Shiina: Complete the 1. quest again";
             this.ShiinaQuest.UseVisualStyleBackColor = true;
             this.ShiinaQuest.Click += new System.EventHandler(this.ShiinaQuest_Click);
             // 
@@ -520,7 +521,7 @@
             this.MashironQuest.Name = "MashironQuest";
             this.MashironQuest.Size = new System.Drawing.Size(319, 39);
             this.MashironQuest.TabIndex = 1;
-            this.MashironQuest.Text = "Mashiron";
+            this.MashironQuest.Text = "Mashiron: Complete the 1. quest again";
             this.MashironQuest.UseVisualStyleBackColor = true;
             this.MashironQuest.Click += new System.EventHandler(this.MashironQuest_Click);
             // 
@@ -828,7 +829,7 @@
             this.QUESTLOGGINGPANEL.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.QUESTPANEL.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
+            this.NPCPANELFORQUEST.ResumeLayout(false);
             this.PROFILEPANEL.ResumeLayout(false);
             this.GameMenuOptions.ResumeLayout(false);
             this.LoadCharactersPanel.ResumeLayout(false);
@@ -901,7 +902,7 @@
 
         private System.Windows.Forms.Label label10;
 
-        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel NPCPANELFORQUEST;
 
         private System.Windows.Forms.Button SAVEANDLOGOUTB;
 
