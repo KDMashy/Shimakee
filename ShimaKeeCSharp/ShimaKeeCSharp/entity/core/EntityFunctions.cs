@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 
 namespace ShimaKeeCSharp.entity;
@@ -7,7 +8,8 @@ public class EntityFunctions
 {
     public List<string> GetFiles(string postfix)
     {
-        string[] filePaths = Directory.GetFiles(@"C:\Users\domak\Desktop\4. Szem\c#\C#formGame\Shimakee\ShimaKeeCSharp\ShimaKeeCSharp\bin\Debug\");
+        string defaultPath = Directory.GetCurrentDirectory();
+        string[] filePaths = Directory.GetFiles(@""+defaultPath);
         List<string> neededFiles = new List<string>();
         foreach (string filePath in filePaths)
         {
