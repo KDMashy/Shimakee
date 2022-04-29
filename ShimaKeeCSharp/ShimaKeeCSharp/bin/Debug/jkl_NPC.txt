@@ -1,0 +1,1 @@
+Mashiron;True;False;jkl;300;500:Shiina;True;False;jkl;450;1000:Raku;False;False;jkl;600;1500:Kaede;False;False;jkl;750;2000:Chi;False;False;jkl;900;4000:Shiro;False;False;jkl;1050;8000:Kuro;False;False;jkl;1200;16000:Hiro;False;False;jkl;1500;32000:
